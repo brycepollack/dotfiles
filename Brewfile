@@ -1,0 +1,12 @@
+brew "git"
+brew "node"
+brew "pnpm"
+brew "baobab"
+brew "black"
+brew "tree"
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
+
+cask "ghostty"
+cask "obsidian"
+cask "visual-studio-code"

@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Secrets
+*.local
+.env
+.env.*
+
+# Editor
+.idea/
+*.swp
+*.swo
