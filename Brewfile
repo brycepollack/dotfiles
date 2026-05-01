@@ -1,6 +1,7 @@
 brew "git"
 brew "node"
 brew "pnpm"
+brew "python"
 brew "baobab"
 brew "black"
 brew "tree"
