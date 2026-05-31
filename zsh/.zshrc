@@ -37,3 +37,6 @@ alias ll='ls -lah'
 
 ##### PATH #####
 export PATH="$HOME/.local/bin:$PATH"
+
+##### STARSHIP #####
+eval "$(starship init zsh)"

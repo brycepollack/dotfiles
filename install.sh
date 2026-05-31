@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOTFILES="$(dirname "$0")"
+DOTFILES="$(cd "$(dirname "$0")" && pwd)"
 
 echo "[bryce-dotfiles] Installing Homebrew..."  
 if ! command -v brew &>/dev/null; then
@@ -9,12 +9,14 @@ fi
 brew bundle --file="$DOTFILES/Brewfile"
 
 echo "[bryce-dotfiles] Configuring zsh..."  
-ln -sf "$DOTFILES/.zshrc" "$HOME/.zshrc"
+ln -sf "$DOTFILES/zsh/.zshrc" "$HOME/.zshrc"
 
 echo "[bryce-dotfiles] Configuring Ghostty..." 
 mkdir -p "$HOME/.config/ghostty"
 ln -sf "$DOTFILES/ghostty/config" "$HOME/.config/ghostty/config"
 
-echo "[bryce-dotfiles] Configuring VSCode..." 
+echo "[bryce-dotfiles] Configuring VSCode..."
 mkdir -p "$HOME/Library/Application Support/Code/User"
 ln -sf "$DOTFILES/vscode/settings.json" "$HOME/Library/Application Support/Code/User/settings.json"
+
+echo "[bryce-dotfiles] Done!"
