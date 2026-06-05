@@ -4,6 +4,7 @@ brew "git"
 brew "node"
 brew "pnpm"
 brew "python"
+brew "uv"
 brew "black"
 
 # CLI utils
