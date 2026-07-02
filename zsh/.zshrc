@@ -1,16 +1,3 @@
-##### COMPLETION #####
-
-# Enable completion system
-autoload -Uz compinit
-compinit
-
-# Better completion UX
-zstyle ':completion:*' menu select
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-zstyle ':completion:*' group-name ''
-zstyle ':completion:*' format '%F{yellow}-- %d --%f'
-zstyle ':completion:*' completer _complete _match _approximate
-
 ##### HISTORY #####
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -26,10 +13,22 @@ setopt NO_NOMATCH
 ##### HOMEBREW #####
 BREW_PREFIX="/opt/homebrew"
 
+##### PLUGINS #####
+# Enable completion system
+autoload -Uz compinit
+compinit
+
+# Better completion UX
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' format '%F{yellow}-- %d --%f'
+zstyle ':completion:*' completer _complete _match _approximate
+
 # Autosuggestions
 source $BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# Syntax highlighting (must be last)
+# Syntax highlighting
 source $BREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ##### ALIASES #####
@@ -37,6 +36,11 @@ alias ll='ls -lah'
 
 ##### PATH #####
 export PATH="$HOME/.local/bin:$PATH"
+
+##### NVM #####
+export NVM_DIR="$HOME/.nvm"
+[ -s "$(brew --prefix nvm)/nvm.sh" ] && \. "$(brew --prefix nvm)/nvm.sh" # This loads nvm
+[ -s "$(brew --prefix nvm)/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix nvm)/etc/bash_completion.d/nvm" # This loads nvm bash_completion
 
 ##### STARSHIP #####
 eval "$(starship init zsh)"

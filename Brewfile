@@ -1,13 +1,12 @@
 # Dev tools
-brew "starship"
 brew "git"
 brew "node"
+brew "nvm"
 brew "pnpm"
-brew "python"
 brew "uv"
-brew "black"
 
-# CLI utils
+# Utils
+brew "starship"
 brew "baobab"
 brew "btop"
 brew "tree"
