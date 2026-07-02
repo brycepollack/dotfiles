@@ -2,7 +2,7 @@
 
 set -eu
 
-while read extension; do
+while read -r extension || [ -n "$extension" ]; do
   [ -z "$extension" ] && continue
 
   echo "Installing $extension"

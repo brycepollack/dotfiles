@@ -8,7 +8,7 @@ echo "[bryce-dotfiles] Installing Homebrew..."
 if ! command -v brew &>/dev/null; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
-brew bundle --file="$DOTFILES/Brewfile"
+brew bundle --file="$DOTFILES/Brewfile" || echo "[bryce-dotfiles] Some brew deps failed to install; continuing"
 
 echo "[bryce-dotfiles] Configuring zsh..."  
 ln -sf "$DOTFILES/zsh/.zshrc" "$HOME/.zshrc"
